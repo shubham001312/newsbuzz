@@ -477,7 +477,7 @@ export function adminSEOAnalyze() {
   preview.style.display = 'block';
   
   document.getElementById('seo-preview-title').textContent = article.seoTitle || article.title?.slice(0, 60) || 'No SEO title';
-  document.getElementById('seo-preview-url').textContent = `https://newsbuzz.in/?article=${article.id}`;
+  document.getElementById('seo-preview-url').textContent = `https://newsbuzz-independent-one.netlify.app/?article=${article.id}`;
   document.getElementById('seo-preview-desc').textContent = article.seoDesc || article.description?.slice(0, 155) || 'No SEO description';
   
   const tagsEl = document.getElementById('seo-tags-analysis');
@@ -971,7 +971,7 @@ export function adminGenerateSocialPosts() {
   const lang = window.__lang || 'en';
   const title = (lang === 'bn' && article.titleBn) ? article.titleBn : (article.title || '');
   const desc = (lang === 'bn' && article.descriptionBn) ? article.descriptionBn : (article.description || '');
-  const url = `https://newsbuzz.in/?article=${article.id}`;
+  const url = `https://newsbuzz-independent-one.netlify.app/?article=${article.id}`;
   const tags = (article.tags || []).slice(0, 3).map(t => `#${t.replace(/\s+/g, '')}`).join(' ');
   const shortDesc = desc.slice(0, 120) + (desc.length > 120 ? '…' : '');
   

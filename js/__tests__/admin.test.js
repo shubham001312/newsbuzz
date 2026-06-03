@@ -88,7 +88,7 @@ function computeAnalyticsSummary(articles) {
 function generateSocialPosts(article, lang = 'en') {
   const title = (lang === 'bn' && article.titleBn) ? article.titleBn : (article.title || '');
   const desc = (lang === 'bn' && article.descriptionBn) ? article.descriptionBn : (article.description || '');
-  const url = `https://newsbuzz.in/?article=${article.id}`;
+  const url = `https://newsbuzz-independent-one.netlify.app/?article=${article.id}`;
   const tags = (article.tags || []).slice(0, 3).map(t => `#${t.replace(/\s+/g, '')}`).join(' ');
   const shortDesc = desc.slice(0, 120) + (desc.length > 120 ? '…' : '');
 
@@ -193,7 +193,7 @@ function analyzeSEO(article) {
   return {
     found: true,
     seoTitle,
-    seoUrl: `https://newsbuzz.in/?article=${article.id}`,
+    seoUrl: `https://newsbuzz-independent-one.netlify.app/?article=${article.id}`,
     seoDesc,
     tags,
     titleLength: seoTitle.length,
@@ -320,7 +320,7 @@ describe('Social Posts — generateSocialPosts', () => {
     const posts = generateSocialPosts(article);
     expect(posts.twitter.length).toBeLessThanOrEqual(280);
     expect(posts.twitter).toContain(article.title);
-    expect(posts.twitter).toContain('https://newsbuzz.in/?article=test123');
+    expect(posts.twitter).toContain('https://newsbuzz-independent-one.netlify.app/?article=test123');
   });
 
   it('generates a Facebook post with emoji prefix', () => {
@@ -639,7 +639,7 @@ describe('SEO — analyzeSEO', () => {
 
   it('generates correct SEO URL', () => {
     const result = analyzeSEO(makeArticle({ id: 'abc123' }));
-    expect(result.seoUrl).toBe('https://newsbuzz.in/?article=abc123');
+    expect(result.seoUrl).toBe('https://newsbuzz-independent-one.netlify.app/?article=abc123');
   });
 
   it('formats tags as hashtag string', () => {

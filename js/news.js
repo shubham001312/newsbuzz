@@ -534,7 +534,7 @@ export function openArticle(id) {
   const ogDesc = document.querySelector('meta[property="og:description"]');
   if (ogDesc) ogDesc.content = seoDesc;
   const ogUrl = document.querySelector('meta[property="og:url"]');
-  if (ogUrl) ogUrl.content = `https://newsbuzz.in/?article=${a.id}`;
+  if (ogUrl) ogUrl.content = `https://newsbuzz-independent-one.netlify.app/?article=${a.id}`;
   
   // Update Twitter tags
   const twTitle = document.querySelector('meta[name="twitter:title"]');
@@ -694,7 +694,7 @@ export function closeArticle() {
   const ogDesc = document.querySelector('meta[property="og:description"]');
   if (ogDesc) ogDesc.content = 'Latest breaking news from West Bengal and India in English and Bengali.';
   const ogUrl = document.querySelector('meta[property="og:url"]');
-  if (ogUrl) ogUrl.content = 'https://newsbuzz.in/';
+  if (ogUrl) ogUrl.content = 'https://newsbuzz-independent-one.netlify.app/';
   const twTitle = document.querySelector('meta[name="twitter:title"]');
   if (twTitle) twTitle.content = 'NewsBuzz — West Bengal &amp; India News';
   const twDesc = document.querySelector('meta[name="twitter:description"]');
@@ -703,7 +703,7 @@ export function closeArticle() {
   // Reset JSON-LD
   const ldArticle = document.getElementById('ld-article');
   if (ldArticle) {
-    ldArticle.textContent = '{"@context":"https://schema.org","@type":"NewsArticle","mainEntityOfPage":{"@type":"WebPage","@id":"https://newsbuzz.in"}}';
+    ldArticle.textContent = '{"@context":"https://schema.org","@type":"NewsArticle","mainEntityOfPage":{"@type":"WebPage","@id":"https://newsbuzz-independent-one.netlify.app"}}';
   }
   updateBreadcrumbs('home');
 }
@@ -1591,7 +1591,7 @@ function initSEO() {
   const lang = window.__lang || 'en';
   const canonical = document.querySelector('link[rel="canonical"]');
   if (canonical) {
-    const url = lang === 'bn' ? 'https://newsbuzz.in/?lang=bn' : 'https://newsbuzz.in/';
+    const url = lang === 'bn' ? 'https://newsbuzz-independent-one.netlify.app/?lang=bn' : 'https://newsbuzz-independent-one.netlify.app/';
     canonical.setAttribute('href', url);
   }
 }
@@ -1610,7 +1610,7 @@ function updateArticleSEO(a) {
       '@type': 'NewsArticle',
       'mainEntityOfPage': {
         '@type': 'WebPage',
-        '@id': `https://newsbuzz.in/?article=${a.id}`
+        '@id': `https://newsbuzz-independent-one.netlify.app/?article=${a.id}`
       },
       'headline': title,
       'description': descSnip,
@@ -1624,7 +1624,7 @@ function updateArticleSEO(a) {
       'publisher': {
         '@type': 'Organization',
         'name': 'NewsBuzz',
-        'url': 'https://newsbuzz.in'
+        'url': 'https://newsbuzz-independent-one.netlify.app'
       },
       'inLanguage': lang === 'bn' ? 'bn-IN' : 'en-IN',
       'articleSection': catLabel(a.category),
@@ -1649,19 +1649,19 @@ function updateBreadcrumbsForArticle(a) {
         '@type': 'ListItem',
         'position': 1,
         'name': 'Home',
-        'item': 'https://newsbuzz.in/'
+        'item': 'https://newsbuzz-independent-one.netlify.app/'
       },
       {
         '@type': 'ListItem',
         'position': 2,
         'name': catLabel(a.category),
-        'item': `https://newsbuzz.in/${a.category}`
+        'item': `https://newsbuzz-independent-one.netlify.app/${a.category}`
       },
       {
         '@type': 'ListItem',
         'position': 3,
         'name': (a.title || '').slice(0, 60),
-        'item': `https://newsbuzz.in/?article=${a.id}`
+        'item': `https://newsbuzz-independent-one.netlify.app/?article=${a.id}`
       }
     ]
   };
@@ -1673,7 +1673,7 @@ function updateBreadcrumbs(section) {
   if (!ldBC) return;
   
   let items = [
-    { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': 'https://newsbuzz.in/' }
+    { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': 'https://newsbuzz-independent-one.netlify.app/' }
   ];
   
   if (section !== 'home' && section !== 'bookmarks' && SECTIONS[section]) {
@@ -1681,14 +1681,14 @@ function updateBreadcrumbs(section) {
       '@type': 'ListItem',
       'position': 2,
       'name': catLabel(section),
-      'item': `https://newsbuzz.in/${section}`
+      'item': `https://newsbuzz-independent-one.netlify.app/${section}`
     });
   } else if (section === 'bookmarks') {
     items.push({
       '@type': 'ListItem',
       'position': 2,
       'name': 'Saved Articles',
-      'item': 'https://newsbuzz.in/bookmarks'
+      'item': 'https://newsbuzz-independent-one.netlify.app/bookmarks'
     });
   }
   
