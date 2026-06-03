@@ -590,3 +590,25 @@ A Node.js backend that runs 24/7 to automatically publish news articles.
 - Service worker caching: After updates, increment cache version in sw.js
 - CORS: Firebase + OpenRouter are client-side CORS-compatible
 - Paths: Both relative 
+
+---
+
+## 🌍 Global Environment Variables
+
+All secrets and config are available as system-wide environment variables.
+Any agent or process can access them without needing the .env file.
+
+| Variable | Description |
+|----------|-------------|
+| OPENROUTER_API_KEY | OpenRouter API key |
+| OPENROUTER_MODEL | AI model name |
+| ADMIN_CODE | Admin panel access code |
+| SITE_NAME | Site name |
+| SITE_URL | Netlify site URL |
+| FIREBASE_* | Firebase config (env override) |
+
+### Usage
+
+On this machine, these are set system-wide via setx.
+Any terminal/agent can access them as standard env vars.
+To set on a new machine: copy .env to project root or run setx manually.
