@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Offline — NewsBuzz</title>
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    .offline-page {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 70vh;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .offline-page__icon {
+      font-size: 64px;
+      margin-bottom: 16px;
+    }
+    .offline-page__title {
+      font-family: var(--font-head);
+      font-size: 28px;
+      font-weight: 900;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+    .offline-page__desc {
+      font-family: var(--font-body);
+      font-size: 14px;
+      color: var(--muted);
+      max-width: 480px;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+    .offline-page__btn {
+      display: inline-block;
+      padding: 10px 24px;
+      background: var(--accent);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background var(--ease);
+    }
+    .offline-page__btn:hover {
+      background: var(--accent-dk);
+    }
+    .offline-page__articles {
+      margin-top: 28px;
+      text-align: left;
+      max-width: 520px;
+      width: 100%;
+    }
+    .offline-page__articles h3 {
+      font-family: var(--font-head);
+      font-size: 16px;
+      color: var(--ink);
+      margin-bottom: 10px;
+      border-bottom: 1px solid var(--rule-light);
+      padding-bottom: 6px;
+    }
+    .offline-article {
+      padding: 8px 0;
+      border-bottom: 1px solid var(--rule-faint);
+      font-family: var(--font-body);
+      font-size: 13px;
+      color: var(--ink-soft);
+      cursor: pointer;
+    }
+    .offline-article:hover {
+      color: var(--accent);
+    }
+    .offline-article__cat {
+      font-size: 8.5px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .offline-article__title {
+      font-weight: 700;
+      margin: 2px 0;
+    }
+    @media (max-width: 600px) {
+      .offline-page__title { font-size: 22px; }
+      .offline-page__desc { font-size: 13px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead__logo-wrap">
+      <span class="masthead__logo">NewsBuzz</span>
+      <div class="masthead__tagline">Truth · Speed · Integrity</div>
+    </div>
+  </header>
+
+  <main class="offline-page">
+    <div class="offline-page__icon">📡</div>
+    <h1 class="offline-page__title">You're Offline</h1>
+    <p class="offline-page__desc">
+      No internet connection detected. Cached articles are available below.
+      Once connected, refresh to get the latest breaking news from West Bengal and India.
+    </p>
+    <button class="offline-page__btn" onclick="window.location.reload()">Try Again</button>
+    
+    <div class="offline-page__articles" id="offline-articles">
+      <h3>📰 Cached Articles</h3>
+      <div id="offline-articles-list">
+        <p style="color:#888;font-size:12px;font-style:italic;">Loading cached articles…</p>
+      </div>
+    </div>
+  </main>
+
+  <footer style="background:var(--ink);color:var(--paper);padding:20px;text-align:center;">
+    <span class="footer__logo" style="font-size:24px;">NewsBuzz</span>
+    <p class="footer__copy">&copy; 2026 NewsBuzz &middot; West Bengal, India</p>
+  </footer>
+
+  <script>
+    // Load cached articles from localStorage
+    (function() {
+      try {
+        const cached = localStorage.getItem('nb_offline_cache');
+        if (cached) {
+          const articles = JSON.parse(cached);
+          const list = document.getElementById('offline-articles-list');
+          if (list && articles.length) {
+            list.innerHTML = articles.slice(0, 10).map(a => {
+              const title = a.title || 'Untitled';
+              const cat = a.category || 'news';
+              return `<div class="offline-article" onclick="window.location.href='/'">
+                <div class="offline-article__cat">${cat}</div>
+                <div class="offline-article__title">${title}</div>
+              </div>`;
+            }).join('');
+            return;
+          }
+        }
+        document.getElementById('offline-articles-list').innerHTML = 
+          '<p style="color:#888;font-size:12px;font-style:italic;">No cached articles. Visit the site while online to cache articles.</p>';
+      } catch(e) {
+        // Silent fail
+      }
+    })();
+  </script>
+</body>
+</html>

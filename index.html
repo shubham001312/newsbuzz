@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NewsBuzz — বাংলা ও ভারতের সংবাদ</title>
+  <meta name="description" content="NewsBuzz brings you the latest breaking news from West Bengal and India — politics, crime, education, sports, weather and government schemes in English and Bengali.">
+  <meta name="keywords" content="West Bengal news, Bengal breaking news, Kolkata news, India news today, Bengali news, NewsBuzz">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="NewsBuzz">
+  <meta property="og:type"        content="website">
+  <meta property="og:title"       content="NewsBuzz — West Bengal &amp; India News">
+  <meta property="og:description" content="Latest breaking news from West Bengal and India in English and Bengali.">
+  <meta property="og:site_name"   content="NewsBuzz">
+  <meta property="og:locale"      content="en_IN">
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="NewsBuzz — West Bengal &amp; India News">
+  <meta name="twitter:description" content="Latest breaking news from West Bengal and India.">
+  <meta name="twitter:site" content="@newsbuzz" />
+  <meta name="twitter:creator" content="@newsbuzz" />
+  <link rel="canonical" href="https://newsbuzz.in/">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"NewsMediaOrganization","name":"NewsBuzz","url":"https://newsbuzz.in","description":"Latest breaking news from West Bengal and India","foundingDate":"2026","areaServed":"IN","inLanguage":["en-IN","bn-IN"]}
+  </script>
+  <script type="application/ld+json" id="ld-breadcrumb">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://newsbuzz.in/"}]}
+  </script>
+  <script type="application/ld+json" id="ld-article">
+  {"@context":"https://schema.org","@type":"NewsArticle","mainEntityOfPage":{"@type":"WebPage","@id":"https://newsbuzz.in"}}
+  </script>
+  <!-- Hreflang tags for bilingual SEO -->
+  <link rel="alternate" href="https://newsbuzz.in/" hreflang="en-IN" />
+  <link rel="alternate" href="https://newsbuzz.in/?lang=bn" hreflang="bn-IN" />
+  <link rel="alternate" href="https://newsbuzz.in/" hreflang="x-default" />
+  <meta name="geo.region" content="IN-WB" />
+  <meta name="geo.placename" content="West Bengal, India" />
+  <!-- News-specific meta tags -->
+  <meta name="news_keywords" content="West Bengal, Kolkata, India news, Bengal news, breaking news, politics, sports, education" />
+  <meta property="og:type" content="article" />
+  <meta property="article:section" content="Home" />
+  <meta property="article:tag" content="news, West Bengal, India" />
+  <meta name="twitter:domain" content="newsbuzz.in" />
+  <link rel="manifest" href="/manifest.json">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="NewsBuzz">
+  <meta name="application-name" content="NewsBuzz">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/cards.css">
+  <link rel="stylesheet" href="css/modal.css">
+  <script src="js/config.js"></script>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead__top">
+    <span id="date-display"></span>
+    <div class="masthead__top-right">
+      <span style="font-size:10px;letter-spacing:1px;text-transform:uppercase;">Language:</span>
+      <div class="lang-toggle">
+        <button id="btn-en" class="active" onclick="window.__setLang('en')">English</button>
+        <button id="btn-bn"               onclick="window.__setLang('bn')">বাংলা</button>
+      </div>
+    </div>
+    <span>Est. 2026 &middot; West Bengal, India</span>
+  </div>
+  <div class="masthead__logo-wrap">
+    <span class="masthead__logo">NewsBuzz</span>
+    <div class="masthead__tagline" id="site-tagline">Truth &middot; Speed &middot; Integrity</div>
+  </div>
+  <div class="masthead__subtitle" id="site-subtitle">West Bengal &amp; India's Trusted News Source</div>
+</header>
+
+<nav id="main-nav">
+  <a href="#" class="active" data-section="home"      data-en="Home"         data-bn="হোম"           onclick="window.__showSection('home',event)">Home</a>
+  <a href="#" data-section="wb"                        data-en="West Bengal"  data-bn="পশ্চিমবঙ্গ"   onclick="window.__showSection('wb',event)">West Bengal</a>
+  <a href="#" data-section="national"                  data-en="National"     data-bn="জাতীয়"         onclick="window.__showSection('national',event)">National</a>
+  <a href="#" data-section="govt"                      data-en="Govt Schemes" data-bn="সরকারি প্রকল্প" onclick="window.__showSection('govt',event)">Govt Schemes</a>
+  <a href="#" data-section="politics"                  data-en="Politics"     data-bn="রাজনীতি"       onclick="window.__showSection('politics',event)">Politics</a>
+  <a href="#" data-section="crime"                     data-en="Crime &amp; Law" data-bn="অপরাধ"     onclick="window.__showSection('crime',event)">Crime &amp; Law</a>
+  <a href="#" data-section="education"                 data-en="Education"    data-bn="শিক্ষা"        onclick="window.__showSection('education',event)">Education</a>
+  <a href="#" data-section="sports"                    data-en="Sports"       data-bn="খেলাধুলা"     onclick="window.__showSection('sports',event)">Sports</a>
+  <a href="#" data-section="weather"                   data-en="Weather"      data-bn="আবহাওয়া"      onclick="window.__showSection('weather',event)">Weather</a>
+  <a href="#" data-section="bookmarks"                 data-en="Saved"        data-bn="সংরক্ষিত"     onclick="window.__showSection('bookmarks',event)">Saved</a>
+</nav>
+
+<div class="search-bar">
+  <input type="text" id="search-input" placeholder="Search news…" autocomplete="off">
+</div>
+
+<div class="ticker">
+  <div class="ticker__label">&#9889; Breaking</div>
+  <div class="ticker__track" id="ticker-track">
+    <span class="tick-item">Loading latest headlines…</span>
+  </div>
+</div>
+
+<div class="container">
+  <div class="ad-slot" id="ad-leaderboard"><span>Advertisement &middot; 728&times;90</span></div>
+</div>
+
+<!-- TRENDING TOPIC CHIPS -->
+<div class="container">
+  <div class="trending-chips" id="trending-chips"></div>
+</div>
+
+<!-- WEATHER WIDGET with 10-day forecast -->
+<div class="container">
+  <div class="weather-widget" id="weather-widget" style="display:none">
+    <div class="weather-widget__main">
+      <div class="weather-widget__icon" id="weather-icon">☀️</div>
+      <div class="weather-widget__temp" id="weather-temp">--°C</div>
+      <div class="weather-widget__info">
+        <strong id="weather-city">Kolkata, India</strong>
+        <span id="weather-desc">Loading…</span>
+        <div class="weather-widget__extras">
+          <span>💨 Wind: <span id="weather-wind">--</span></span>
+          <span>💧 Humidity: <span id="weather-humidity">--</span></span>
+        </div>
+      </div>
+    </div>
+    <div class="weather-widget__forecast" id="weather-forecast">
+      <!-- 10-day forecast populated by JS -->
+    </div>
+  </div>
+</div>
+
+<main id="main-content">
+
+  <section class="page-section active" id="page-home">
+    <div class="container">
+      <div class="breadcrumb" id="breadcrumb-home">
+        <a href="#" onclick="window.__showSection('home',event)">Home</a>
+      </div>
+      <div class="hero">          <div class="hero__col" id="hero-left">
+          <div class="col-label" id="col-label-latest">Latest</div>
+          <div id="hero-left-skeleton"></div>
+        </div>
+        <div class="hero__rule"></div>
+        <div class="hero__col" id="hero-center">
+          <div class="col-label" id="col-label-top">Top Story</div>
+        </div>
+        <div class="hero__rule"></div>
+        <div class="hero__col" id="hero-right">
+          <div class="col-label" id="col-label-more">More News</div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="ad-slot"><span>Advertisement &middot; 300&times;250</span></div>
+    </div>
+    <div class="container home-layout">
+      <div class="home-main">
+        <div id="strips"></div>
+      </div>
+      <aside class="home-sidebar">
+        <div class="sidebar-heading" id="sidebar-trending" data-en="Trending Now" data-bn="ট্রেন্ডিং">Trending Now</div>
+        <div id="trending-list"></div>
+      </aside>
+    </div>
+    <div class="container infinite-section">
+      <div class="infinite-section__header" id="infinite-header" data-en="More News" data-bn="আরও সংবাদ">More News</div>
+      <div id="infinite-scroll-grid"></div>
+      <div id="infinite-loader"><div class="loader-spinner"></div></div>
+    </div>
+    <!-- Newsletter CTA removed as requested -->
+  </section>
+
+  <section class="page-section" id="page-wb"></section>
+  <section class="page-section" id="page-national"></section>
+  <section class="page-section" id="page-govt"></section>
+  <section class="page-section" id="page-politics"></section>
+  <section class="page-section" id="page-crime"></section>
+  <section class="page-section" id="page-education"></section>
+  <section class="page-section" id="page-sports"></section>
+  <section class="page-section" id="page-weather"></section>
+
+  <section class="page-section" id="page-bookmarks">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="#" onclick="window.__showSection('home',event)">Home</a>
+        <span class="sep">/</span>
+        <span id="bookmarks-bc-label" data-en="Saved Articles" data-bn="সংরক্ষিত নিবন্ধ">Saved Articles</span>
+      </div>
+      <div class="page-header">
+        <h1 class="page-title" id="bookmarks-title" data-en="Saved Articles" data-bn="সংরক্ষিত নিবন্ধ">Saved Articles</h1>
+        <p class="page-count" id="bookmarks-count">0 saved</p>
+      </div>
+      <div id="bookmarks-list">
+        <p class="empty" id="bookmarks-empty" data-en="You haven't saved any articles yet. Click the bookmark icon on any article to save it for later." data-bn="আপনি এখনও কোনো নিবন্ধ সংরক্ষণ করেননি। পরে পড়ার জন্য যেকোনো নিবন্ধে বুকমার্ক আইকনে ক্লিক করুন।">You haven't saved any articles yet. Click the bookmark icon on any article to save it for later.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section" id="page-search">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="#" onclick="window.__showSection('home',event)">Home</a>
+        <span class="sep">/</span>
+        <span>Search</span>
+      </div>
+      <div class="page-header">
+        <h1 id="search-count" class="page-title"></h1>
+      </div>
+      <div id="search-results"></div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <span class="footer__logo">NewsBuzz</span>
+  <p id="footer-tagline" style="font-size:12px;color:#aaa;font-style:italic;margin-bottom:10px;">Bringing you truth from West Bengal and beyond.</p>
+  <nav class="footer__links">
+    <a href="#" onclick="window.__showSection('wb',event)">West Bengal</a>
+    <a href="#" onclick="window.__showSection('national',event)">National</a>
+    <a href="#" onclick="window.__showSection('govt',event)">Govt Schemes</a>
+    <a href="#" onclick="window.__showSection('politics',event)">Politics</a>
+    <a href="#" onclick="window.__showSection('crime',event)">Crime &amp; Law</a>
+    <a href="#" onclick="window.__showSection('education',event)">Education</a>
+    <a href="#" onclick="window.__showSection('sports',event)">Sports</a>
+    <a href="#" onclick="window.__showSection('weather',event)">Weather</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="about.html">About Us</a>
+  </nav>
+  <p class="footer__copy">&copy; 2026 NewsBuzz &middot; All rights reserved &middot; West Bengal, India</p>
+  <p class="footer__copy" style="font-size:12px;color:#888;margin-top:6px;">Unique Visitors: <span id="visitor-count-val" style="color:var(--accent);font-weight:bold;">...</span></p>
+</footer>
+
+<!-- ARTICLE MODAL -->
+<div id="article-modal" class="overlay" onclick="if(event.target===this)window.closeArticle()">
+  <div class="modal__box">
+    <!-- Reading Progress Bar (must be at top for sticky positioning) -->
+    <div class="modal-progress">
+      <div class="modal-progress__bar" id="modal-progress-bar"></div>
+    </div>
+    <button class="modal__close" onclick="window.closeArticle()">&#10005;</button>
+    <div id="modal-cat"></div>
+    <h1 id="modal-title"></h1>
+    <div id="modal-meta"></div>
+    <img id="modal-img" src="" alt="" onerror="this.style.display='none'">
+    <div id="modal-body"></div>
+    <div id="modal-tags"></div>
+
+    <!-- Sources -->
+    <div id="modal-sources" class="modal-sources"></div>
+
+    <!-- Modal Actions: Share, Bookmark, Print -->
+    <div class="modal-actions">
+      <div class="share-row">
+        <span class="share-row__label" data-en="Share" data-bn="শেয়ার">Share</span>
+        <button class="share-btn" id="share-wa" title="WhatsApp">&#128172;</button>
+        <button class="share-btn" id="share-fb" title="Facebook">&#120143;</button>
+        <button class="share-btn" id="share-twitter" title="Twitter / X">&#120143;</button>
+        <button class="share-btn" id="share-email" title="Email">&#9993;</button>
+        <button class="share-btn" id="share-copy" title="Copy Link">&#128203;</button>
+      </div>
+      <button class="btn-bookmark btn-bookmark--modal" id="modal-bookmark-btn" title="Save article">&#9734;</button>
+      <button class="btn-print" id="modal-print-btn" title="Print article">&#128424;</button>
+    </div>
+
+    <!-- Reading Stats: Views, Read Time, Category Reads -->
+    <div class="reading-stats" id="reading-stats">
+      <span class="reading-stats__item" id="stat-views">👁️ <span id="stat-views-count">0</span> views</span>
+      <span class="reading-stats__item" id="stat-reads">📖 <span id="stat-reads-count">0</span> reads in this category</span>
+      <span class="reading-stats__item" id="stat-saves">🔖 <span id="stat-saves-count">0</span> saves</span>
+      <span class="reading-stats__item" id="stat-your-visits" style="display:none">🔄 You've read this <span id="stat-your-visits-count">0</span> times</span>
+    </div>
+
+    <!-- Related Articles -->
+    <div class="modal-related" id="modal-related" style="display:none">
+      <div class="modal-related__title" id="modal-related-title" data-en="Related News" data-bn="সম্পর্কিত সংবাদ">Related News</div>
+      <div class="modal-related__grid" id="modal-related-grid"></div>
+    </div>
+  </div>
+</div>
+
+<!-- HIDDEN ADMIN PANEL -->
+<div id="admin-panel" class="overlay" onclick="if(event.target===this)closeAdmin()">
+  <div class="adm__box">
+    <div class="adm__header">
+      <h2 class="adm__title">&#9881; NewsBuzz Admin</h2>
+      <button class="adm__close" onclick="closeAdmin()">&#10005;</button>
+    </div>
+    <div class="adm-tabs">
+      <button class="adm-tab active" data-tab="post"   onclick="adminTab('post')">&#9998; Post</button>
+      <button class="adm-tab"        data-tab="ai"     onclick="adminTab('ai')">&#129302; AI Gen</button>
+      <button class="adm-tab"        data-tab="ai-custom" onclick="adminTab('ai-custom')">&#128295; AI Config</button>
+      <button class="adm-tab"        data-tab="hot"    onclick="adminTab('hot')">&#128293; Hot Topics</button>
+      <button class="adm-tab"        data-tab="auto"   onclick="adminTab('auto')">&#9889; Auto-Publish</button>
+      <button class="adm-tab"        data-tab="seed"   onclick="adminTab('seed')">&#127807; Seed</button>
+      <button class="adm-tab"        data-tab="manage" onclick="adminTab('manage')">&#128203; Manage</button>
+      <button class="adm-tab"        data-tab="rss"    onclick="adminTab('rss')">&#128240; RSS Feeds</button>
+      <button class="adm-tab"        data-tab="analytics" onclick="adminTab('analytics')">&#128200; Analytics</button>
+      <button class="adm-tab"        data-tab="schedule" onclick="adminTab('schedule')">&#9200; Schedule</button>
+      <button class="adm-tab"        data-tab="bulk"   onclick="adminTab('bulk')">&#128230; Bulk</button>
+      <button class="adm-tab"        data-tab="seo"    onclick="adminTab('seo')">&#128269; SEO</button>
+      <button class="adm-tab"        data-tab="backup" onclick="adminTab('backup')">&#128427; Backup</button>
+      <button class="adm-tab"        data-tab="govt"   onclick="adminTab('govt')">&#127477; Govt Monitor</button>
+      <button class="adm-tab"        data-tab="users"  onclick="adminTab('users')">&#128101; Users</button>
+      <button class="adm-tab"        data-tab="offline" onclick="adminTab('offline')">&#128190; Offline</button>
+      <button class="adm-tab"        data-tab="abtest" onclick="adminTab('abtest')">&#9878; A/B Test</button>
+      <button class="adm-tab"        data-tab="survey" onclick="adminTab('survey')">&#128203; Survey</button>
+      <button class="adm-tab"        data-tab="social" onclick="adminTab('social')">&#128279; Social</button>
+    </div>
+
+    <!-- Post tab -->
+    <div class="adm-section active" id="adm-post">
+      <label class="adm-label">Headline (English)</label>
+      <input class="adm-input" id="adm-title" placeholder="News headline…">
+      <label class="adm-label">Headline (বাংলা)</label>
+      <input class="adm-input" id="adm-title-bn" placeholder="বাংলায় শিরোনাম…">
+      <div class="adm-row">
+        <div style="flex:1"><label class="adm-label">Category</label>
+          <select class="adm-select" id="adm-cat">
+            <option value="wb">West Bengal</option><option value="national">National</option>
+            <option value="govt">Govt Schemes</option><option value="politics">Politics</option>
+            <option value="crime">Crime &amp; Law</option><option value="education">Education</option>
+            <option value="sports">Sports</option><option value="weather">Weather</option>
+          </select>
+        </div>
+        <div style="flex:1"><label class="adm-label">Source</label>
+          <input class="adm-input" id="adm-source" placeholder="PTI / ANI / Self…">
+        </div>
+      </div>
+      <label class="adm-label">Article Body (English)</label>
+      <textarea class="adm-textarea" id="adm-desc" placeholder="Full article text…"></textarea>
+      <label class="adm-label">Article Body (বাংলা)</label>
+      <textarea class="adm-textarea" id="adm-desc-bn" placeholder="বাংলায় সম্পূর্ণ নিবন্ধ…"></textarea>
+      <label class="adm-label">Image URL</label>
+      <input class="adm-input" id="adm-img" placeholder="https://…/image.jpg">
+      <label class="adm-label">SEO Tags (comma separated)</label>
+      <input class="adm-input" id="adm-tags" placeholder="Bengal news, Kolkata update…">
+      <button class="adm-btn" onclick="adminPost()">Publish Article</button>
+      <div class="adm-status" id="post-status"></div>
+    </div>      <!-- AI Custom Config tab -->
+    <div class="adm-section" id="adm-ai-custom">
+      <p style="font-size:12px;color:#9a8a7a;margin-bottom:12px;">Customize the AI news reporter's voice, style, and focus areas. These instructions get injected into every AI generation prompt.</p>
+      <label class="adm-label">Reporter Persona / Tone</label>
+      <textarea class="adm-textarea" id="adm-ai-persona" placeholder="Senior Indian journalist for NewsBuzz, neutral PTI/ANI wire style, factual reporting…" style="min-height:70px;"></textarea>
+      <label class="adm-label">Focus Topics (comma separated)</label>
+      <input class="adm-input" id="adm-ai-focus" placeholder="West Bengal politics, Kolkata metro, Bengal infrastructure, education reforms…">
+      <label class="adm-label">SEO Strategy Notes</label>
+      <textarea class="adm-textarea" id="adm-ai-seo" placeholder="Target Bengali-speaking readers, use local place names, prioritize Google India search terms…" style="min-height:60px;"></textarea>
+      <label class="adm-label">Auto-Scan Speed (publish interval)</label>
+      <div class="adm-row" style="align-items:center;">
+        <input type="range" id="adm-speed-slider" min="15" max="360" value="120" style="flex:1;accent-color:var(--accent);height:6px;background:#3a3028;border-radius:3px;">
+        <span id="adm-speed-display" style="font-size:13px;color:var(--accent);font-weight:bold;min-width:60px;text-align:right;">2h</span>
+      </div>
+      <div style="font-size:10.5px;color:#6a5a4a;margin-top:2px;">Lower = faster publishing. Min: 15 min. Current: <span id="adm-speed-current">2 hours</span></div>
+      <button class="adm-btn" onclick="adminSaveAIConfig()">&#128190; Save AI Configuration</button>
+      <div class="adm-status" id="ai-custom-status"></div>
+    </div>
+
+    <!-- AI Generate tab -->
+    <div class="adm-section" id="adm-ai">
+      <label class="adm-label">Topic / Angle</label>
+      <input class="adm-input" id="adm-ai-topic" placeholder="e.g. West Bengal flood update Malda district">
+      <label class="adm-label">Category</label>
+      <select class="adm-select" id="adm-ai-cat">
+        <option value="wb">West Bengal</option><option value="national">National</option>
+        <option value="govt">Govt Schemes</option><option value="politics">Politics</option>
+        <option value="crime">Crime &amp; Law</option><option value="education">Education</option>
+        <option value="sports">Sports</option><option value="weather">Weather</option>
+      </select>
+      <button class="adm-btn" onclick="adminAIGenerate()">&#129302; Generate &amp; Preview</button>
+      <div id="ai-preview" style="display:none">
+        <div id="ai-preview-title"></div>
+        <div id="ai-preview-body"></div>
+        <div id="ai-preview-tags"></div>
+        <div id="ai-preview-score"></div>
+        <button class="adm-btn adm-btn--green" onclick="adminAIPublish()">&#9989; Publish This Article</button>
+      </div>
+      <div class="adm-status" id="ai-status"></div>
+    </div>
+
+    <!-- Hot Topics tab -->
+    <div class="adm-section" id="adm-hot">
+      <p style="font-size:12.5px;color:#888;margin-bottom:12px;">OpenRouter scans for trending viral-potential topics and scores them. Publish any with one click.</p>
+      <label class="adm-label">Category to scan</label>
+      <select class="adm-select" id="adm-hot-cat">
+        <option value="wb">West Bengal</option><option value="national">National</option>
+        <option value="govt">Govt Schemes</option><option value="politics">Politics</option>
+        <option value="crime">Crime &amp; Law</option><option value="education">Education</option>
+        <option value="sports">Sports</option><option value="weather">Weather</option>
+      </select>
+      <button class="adm-btn" onclick="adminDetectHot()">&#128269; Detect Hot Topics</button>
+      <div id="hot-list"></div>
+      <div class="adm-status" id="hot-status"></div>
+    </div>
+
+    <!-- Auto-Publish tab -->
+    <div class="adm-section" id="adm-auto">
+      <p class="auto-desc">Auto-publish mode scans all 8 categories for hot topics on a timer and auto-writes + publishes articles above the viral threshold.</p>
+      <div class="auto-info-grid">
+        <div class="auto-info-card"><strong>8</strong><small>Categories</small></div>
+        <div class="auto-info-card"><strong id="auto-interval-display">2hr</strong><small>Scan Interval</small></div>
+        <div class="auto-info-card"><strong id="auto-threshold-display">65</strong><small>Min Viral Score</small></div>
+      </div>
+      <button class="adm-btn" id="btn-auto" onclick="adminToggleAuto()">&#9654; Start Auto-Publish</button>
+      <div class="adm-status" id="auto-status"></div>
+    </div>
+
+    <!-- Seed tab -->
+    <div class="adm-section" id="adm-seed">
+      <p class="seed-desc">Seed 20 articles per category (160 total) using OpenRouter AI. Run once to populate your site. <strong style="color:#fa3">Takes 5-10 minutes. Do not close this tab.</strong></p>
+      <button class="adm-btn adm-btn--green" onclick="adminSeedAll()">&#127807; Seed All Categories (20 each)</button>
+      <div class="adm-status" id="seed-status"></div>
+    </div>
+
+    <!-- Manage tab -->
+    <div class="adm-section" id="adm-manage">
+      <button class="adm-btn adm-btn--secondary" onclick="adminTab('manage')" style="margin-top:0;margin-bottom:10px;">&#128260; Refresh</button>
+      <div id="manage-list"></div>
+    </div>
+
+    <!-- RSS Feeds tab -->
+    <div class="adm-section" id="adm-rss">
+      <p style="font-size:12.5px;color:#888;margin-bottom:12px;">Import articles from RSS feeds of major Indian news sources. Auto-publish to relevant categories.</p>
+      <div class="rss-feed-list" id="rss-feed-list"></div>
+      <button class="adm-btn" onclick="adminRefreshRSS()">&#128260; Refresh All Feeds Now</button>
+      <div class="adm-status" id="rss-status"></div>
+    </div>
+
+    <!-- Analytics tab -->
+    <div class="adm-section" id="adm-analytics">
+      <p style="font-size:12.5px;color:#888;margin-bottom:12px;">Article performance analytics and reader insights.</p>
+      <div class="analytics-grid" id="analytics-grid">
+        <div class="analytics-card"><strong id="analytics-total">0</strong><small>Total Articles</small></div>
+        <div class="analytics-card"><strong id="analytics-by-cat">0</strong><small>Categories Active</small></div>
+        <div class="analytics-card"><strong id="analytics-avg-score">0</strong><small>Avg Viral Score</small></div>
+        <div class="analytics-card"><strong id="analytics-recent">0</strong><small>Posted Today</small></div>
+      </div>
+      <div id="analytics-breakdown" style="margin-top:14px;"></div>
+    </div>
+
+    <!-- Schedule tab -->
+    <div class="adm-section" id="adm-schedule">
+      <p style="font-size:12.5px;color:#888;margin-bottom:12px;">Schedule articles to be published at a specific date and time.</p>
+      <label class="adm-label">Article Title</label>
+      <input class="adm-input" id="sched-title" placeholder="Headline…">
+      <label class="adm-label">Article Body</label>
+      <textarea class="adm-textarea" id="sched-body" placeholder="Full article text…"></textarea>
+      <div class="adm-row">
+        <div style="flex:1"><label class="adm-label">Category</label>
+          <select class="adm-select" id="sched-cat">
+            <option value="wb">West Bengal</option><option value="national">National</option>
+            <option value="govt">Govt Schemes</option><option value="politics">Politics</option>
+            <option value="crime">Crime &amp; Law</option><option value="education">Education</option>
+            <option value="sports">Sports</option><option value="weather">Weather</option>
+          </select>
+        </div>
+        <div style="flex:1"><label class="adm-label">Publish Date</label>
+          <input class="adm-input" type="datetime-local" id="sched-date">
+        </div>
+      </div>
+      <button class="adm-btn" onclick="adminScheduleArticle()">&#9200; Schedule Publication</button>
+      <div id="scheduled-list" style="margin-top:14px;"></div>
+      <div class="adm-status" id="sched-status"></div>
+    </div>
+
+    <!-- Bulk Operations tab -->
+    <div class="adm-section" id="adm-bulk">
+      <p style="font-size:12.5px;color:#888;margin-bottom:12px;">Bulk operations on articles.</p>
+      <label class="adm-label">Category</label>
+      <select class="adm-select" id="bulk-cat">
+        <option value="all">All Categories</option>
+        <option value="wb">West Bengal</option><option value="national">National</option>
+        <option value="govt">Govt Schemes</option><option value="politics">Politics</option>
+        <option value="crime">Crime &amp; Law</option><option value="education">Education</option>
+        <option value="sports">Sports</option><option value="weather">Weather</option>
+      </select>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;">
+        <button class="adm-btn adm-btn--danger" onclick="adminBulkDelete()">&#128465; Delete All in Category</button>
+        <button class="adm-btn" onclick="adminBulkRegenerate()">&#128260; Regenerate Tags &amp; SEO</button>
+        <button class="adm-btn adm-btn--green" onclick="adminBulkExport()">&#128230; Export as JSON</button>
+      </div>
+      <div class="adm-status" id="bulk-status"></div>
+    </div>
+
+    <!-- SEO tab -->
+    <div class="adm-section" id="adm-seo">
+      <p style="font-size:12.5px;color:#888;margin-bottom:12px;">SEO analysis and preview for your site.</p>
+      <label class="adm-label">Article ID to analyze</label>
+      <input class="adm-input" id="seo-article-id" placeholder="Paste article ID…">
+      <button class="adm-btn" onclick="adminSEOAnalyze()">&#128269; Analyze SEO</button>
+      <div id="seo-preview" style="margin-top:14px;display:none">
+        <div style="background:#1a1a1a;padding:14px;border:1px solid #333;max-width:600px">
+          <div style="font-size:10px;color:#888;margin-bottom:4px;">https://newsbuzz.in/?article=...</div>
+          <div style="font-size:14px;color:#1a0dab;font-family:Arial;margin-bottom:2px;" id="seo-preview-title"></div>
+          <div style="font-size:12px;color:#006621;font-family:Arial;margin-bottom:2px;" id="seo-preview-url"></div>
+          <div style="font-size:12px;color:#545454;font-family:Arial;" id="seo-preview-desc"></div>
+        </div>
+        <div id="seo-tags-analysis" style="margin-top:10px;"></div>
+      </div>
+      <div class="adm-status" id="seo-status"></div>
+    </div>
+
+    <!-- Backup tab -->
+    <div class="adm-section" id="adm-backup">
+      <p style="font-size:12.5px;color:#888;margin-bottom:12px;">Backup and restore your articles.</p>
+      <button class="adm-btn" onclick="adminBackupCreate()">&#128427; Create Backup (JSON)</button>
+      <button class="adm-btn adm-btn--secondary" onclick="document.getElementById('backup-file-input').click()">&#128190; Restore from Backup</button>
+      <input type="file" id="backup-file-input" accept=".json" style="display:none" onchange="adminBackupRestore(event)">
+      <div class="adm-status" id="backup-status"></div>
+      <div id="backup-list" style="margin-top:14px;"></div>
+    </div>
+
+    <!-- Govt Monitor tab -->
+    <div class="adm-section" id="adm-govt">
+      <p style="font-size:12.5px;color:#888;margin-bottom:12px;">Automatic government announcement monitoring. Checks PIB, MyGov, and other official sources.</p>
+      <div class="auto-info-grid">
+        <div class="auto-info-card"><strong>3</strong><small>Sources Monitored</small></div>
+        <div class="auto-info-card"><strong>30min</strong><small>Check Interval</small></div>
+        <div class="auto-info-card"><strong><span id="govt-last-check">Never</span></strong><small>Last Check</small></div>
+      </div>
+      <button class="adm-btn" onclick="adminCheckGovtNow()">&#128269; Check Government Sources Now</button>
+      <div id="govt-results" style="margin-top:12px;"></div>
+      <div class="adm-status" id="govt-status"></div>
+    </div>
+
+    <!-- Users tab -->
+    <div class="adm-section" id="adm-users">
+      <p style="font-size:12.5px;color:#888;margin-bottom:12px;">Reader engagement statistics (stored locally on each device).</p>
+      <div class="auto-info-grid">
+        <div class="auto-info-card"><strong><span id="users-total-visits">0</span></strong><small>Your Visits</small></div>
+        <div class="auto-info-card"><strong><span id="users-saved">0</span></strong><small>Saved Articles</small></div>
+        <div class="auto-info-card"><strong><span id="users-books">0</span></strong><small>Articles Read</small></div>
+      </div>
+      <div id="users-interest-chart" style="margin-top:14px;"></div>
+      <button class="adm-btn adm-btn--danger" onclick="adminClearUserData()">&#128465; Clear Local User Data</button>
+      <div class="adm-status" id="users-status"></div>
+    </div>
+
+    <!-- Offline Mode tab -->
+    <div class="adm-section" id="adm-offline">
+      <p style="font-size:12.5px;color:#888;margin-bottom:12px;">Cache articles for offline reading. Great for low-connectivity areas.</p>
+      <button class="adm-btn" onclick="adminCacheForOffline()">&#128190; Cache Latest 20 Articles</button>
+      <button class="adm-btn adm-btn--danger" onclick="adminClearOfflineCache()">&#128465; Clear Cache</button>
+      <div class="adm-status" id="offline-status"></div>
+      <div id="offline-info" style="margin-top:12px;font-size:12px;color:#888;"></div>
+    </div>
+
+    <!-- A/B Headline Testing tab -->
+    <div class="adm-section" id="adm-abtest">
+      <p style="font-size:12px;color:#9a8a7a;margin-bottom:12px;">Create A/B headline tests to see which headline drives more reader clicks. Results are tracked per visitor in localStorage.</p>
+      <label class="adm-label">Select Article</label>
+      <select class="adm-select" id="abtest-article">
+        <option value="">— Select article to test —</option>
+      </select>
+      <label class="adm-label">Original Headline (A)</label>
+      <input class="adm-input" id="abtest-headline-a" placeholder="Current/control headline">
+      <label class="adm-label">Test Headline (B)</label>
+      <input class="adm-input" id="abtest-headline-b" placeholder="Alternative headline to test">
+      <button class="adm-btn" onclick="adminStartABTest()">&#9878; Start A/B Test</button>
+      <div class="adm-status" id="abtest-status"></div>
+      <div id="abtest-results" style="margin-top:14px;"></div>
+      <div id="abtest-list" style="margin-top:14px;"></div>
+    </div>
+
+    <!-- Reader Survey Builder tab -->
+    <div class="adm-section" id="adm-survey">
+      <p style="font-size:12px;color:#9a8a7a;margin-bottom:12px;">Create reader polls and surveys. Questions appear as a banner on the site and collect responses in localStorage.</p>
+      <label class="adm-label">Survey Question</label>
+      <input class="adm-input" id="survey-question" placeholder="e.g. Which topic should we cover more?" value="Which type of news interests you the most?">
+      <label class="adm-label">Option 1</label>
+      <input class="adm-input" id="survey-opt1" placeholder="e.g. West Bengal Politics" value="West Bengal Politics">
+      <label class="adm-label">Option 2</label>
+      <input class="adm-input" id="survey-opt2" placeholder="e.g. Sports" value="Sports">
+      <label class="adm-label">Option 3</label>
+      <input class="adm-input" id="survey-opt3" placeholder="e.g. Education (optional)" value="Education">
+      <label class="adm-label">Option 4</label>
+      <input class="adm-input" id="survey-opt4" placeholder="e.g. Weather (optional)" value="Weather">
+      <div class="adm-row" style="margin-top:6px;">
+        <button class="adm-btn" onclick="adminLaunchSurvey()">&#128203; Launch Survey</button>
+        <button class="adm-btn adm-btn--secondary" onclick="adminEndSurvey()">&#10060; End Survey</button>
+      </div>
+      <div class="adm-status" id="survey-status"></div>
+      <div id="survey-results" style="margin-top:14px;"></div>
+    </div>
+
+    <!-- Social Media Posting tab -->
+    <div class="adm-section" id="adm-social">
+      <p style="font-size:12px;color:#9a8a7a;margin-bottom:12px;">Generate platform-optimized social media posts from any article. Copy directly for Twitter, Facebook, WhatsApp, and LinkedIn.</p>
+      <label class="adm-label">Select Article</label>
+      <select class="adm-select" id="social-article">
+        <option value="">— Select article to share —</option>
+      </select>
+      <button class="adm-btn" onclick="adminGenerateSocialPosts()">&#128279; Generate Social Posts</button>
+      <div class="adm-status" id="social-status"></div>
+      <div id="social-posts" style="margin-top:14px;display:none">
+        <div class="social-platform">
+          <div class="social-platform__header">&#120156; Twitter / X</div>
+          <div class="social-platform__preview" id="social-twitter"></div>
+          <button class="adm-btn adm-btn--secondary" onclick="adminCopySocial('twitter')">&#128203; Copy</button>
+        </div>
+        <div class="social-platform">
+          <div class="social-platform__header">&#120143; Facebook</div>
+          <div class="social-platform__preview" id="social-facebook"></div>
+          <button class="adm-btn adm-btn--secondary" onclick="adminCopySocial('facebook')">&#128203; Copy</button>
+        </div>
+        <div class="social-platform">
+          <div class="social-platform__header">&#128172; WhatsApp</div>
+          <div class="social-platform__preview" id="social-whatsapp"></div>
+          <button class="adm-btn adm-btn--secondary" onclick="adminCopySocial('whatsapp')">&#128203; Copy</button>
+        </div>
+        <div class="social-platform">
+          <div class="social-platform__header">&#128188; LinkedIn</div>
+          <div class="social-platform__preview" id="social-linkedin"></div>
+          <button class="adm-btn adm-btn--secondary" onclick="adminCopySocial('linkedin')">&#128203; Copy</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  // ── Register Service Worker for PWA offline support ──────
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js').then((reg) => {
+        console.log('[PWA] Service Worker registered:', reg.scope);
+        
+        // Check for updates on page load
+        reg.addEventListener('updatefound', () => {
+          const newWorker = reg.installing;
+          newWorker.addEventListener('statechange', () => {
+            if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+              console.log('[PWA] New version available. Reload to update.');
+            }
+          });
+        });
+      }).catch((err) => {
+        console.warn('[PWA] Service Worker registration failed:', err.message);
+      });
+    });
+
+    // Detect online/offline status and show banner
+    window.addEventListener('online', () => {
+      document.getElementById('connection-status')?.remove();
+    });
+    window.addEventListener('offline', () => {
+      const existing = document.getElementById('connection-status');
+      if (existing) return;
+      const banner = document.createElement('div');
+      banner.id = 'connection-status';
+      banner.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:9999;background:#b22222;color:#fff;text-align:center;padding:6px 12px;font-size:12px;font-family:var(--font-body);';
+      banner.textContent = '📡 You are offline. Cached articles are available.';
+      document.body.prepend(banner);
+    });
+  }
+</script>
+
+<script type="module">
+  import { initFirebase, setupVisitorCounter }     from './js/firebase.js';
+  import { loadAndRender, closeArticle, injectArticle } from './js/news.js';
+  import { initLang }                              from './js/lang.js';
+  import { initSearch }                            from './js/search.js';
+  import { initChat }                              from './js/chat.js';
+  import { startAutoPublish }                      from './js/openrouter.js';
+
+  initFirebase();
+  setupVisitorCounter((count) => {
+    const el = document.getElementById('visitor-count-val');
+    if (el) el.textContent = Number(count).toLocaleString('en-IN');
+  });
+  initLang();
+  initSearch();
+  initChat();
+  loadAndRender();
+  startBrowserAutoPublish();
+
+  const el = document.getElementById('date-display');
+  if (el) el.textContent = new Date().toLocaleDateString('en-IN',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+
+  const ais = document.getElementById('auto-interval-display');
+  const ath = document.getElementById('auto-threshold-display');
+  if (ais) ais.textContent = (CONFIG.AUTO_SCAN_INTERVAL/3600000)+'hr';
+  if (ath) ath.textContent = CONFIG.MIN_VIRAL_SCORE;
+
+  window.closeArticle = closeArticle;
+
+  window.__loadAdminModule = async () => {
+    if (!window.__adminLoaded) {
+      await import('./js/admin.js');
+      window.__adminLoaded = true;
+    }
+  };
+
+  function startBrowserAutoPublish() {
+    if (!CONFIG.AUTO_PUBLISH_AUTOSTART) return;
+
+    const lockKey = 'newsbuzz_browser_auto_publish_started';
+    const lockUntil = Number(localStorage.getItem(lockKey) || 0);
+    if (Date.now() < lockUntil) return;
+
+    localStorage.setItem(lockKey, String(Date.now() + CONFIG.AUTO_SCAN_INTERVAL));
+    startAutoPublish(article => {
+      injectArticle(article);
+      console.log('[AutoPublish] Browser auto-published:', article.title);
+    });
+  }
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- DARK MODE TOGGLE -->
+<button class="dark-toggle" id="dark-toggle-btn" title="Toggle dark mode">🌙</button>
+
+<!-- BACK TO TOP -->
+<button class="back-to-top" id="back-to-top-btn" title="Back to top">&#8593;</button>
+
+<!-- PUSH NOTIFICATION BANNER -->
+<div class="notif-banner" id="notif-banner">
+  <strong>🔔 Breaking News Alerts</strong>
+  Get notified when major news breaks in West Bengal.
+  <div>
+    <button id="notif-enable-btn">Enable Notifications</button>
+    <button class="notif-banner__dismiss" id="notif-dismiss-btn">Not now</button>
+  </div>
+</div>
+
+<!-- FLOATING AI CHATBOT -->
+<button class="chat-fab" id="chat-toggle-btn" title="Chat with NewsBuzz AI">💬</button>
+<div class="chat-window" id="chat-window" style="display:none">
+  <div class="chat-header">
+    <span>🤖 NewsBuzz AI Desk</span>
+    <button class="chat-header__close" id="chat-close-btn">&#10005;</button>
+  </div>
+  <div class="chat-messages" id="chat-messages"></div>
+  <div class="chat-input-row">
+    <input type="text" id="chat-input" placeholder="Ask about today's news…" autocomplete="off">
+    <button id="chat-send-btn">Send</button>
+  </div>
+</div>
+
+</body>
+</html>

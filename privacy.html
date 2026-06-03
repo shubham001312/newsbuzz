@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — NewsBuzz</title>
+  <meta name="description" content="Privacy Policy for NewsBuzz — how we collect, use and protect your data.">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    .privacy-wrap { max-width: 720px; margin: 40px auto; padding: 0 20px 60px; }
+    .privacy-wrap h1 { font-family: var(--font-head); font-size: 36px; margin-bottom: 6px; }
+    .privacy-wrap h2 { font-family: var(--font-head); font-size: 18px; margin: 26px 0 7px; color: var(--accent); }
+    .privacy-wrap p, .privacy-wrap li { font-family: var(--font-body); font-size: 14px; line-height: 1.8; color: #444; margin-bottom: 10px; }
+    .privacy-wrap ul  { padding-left: 20px; }
+    .privacy-wrap .date { font-size: 12px; color: #999; font-style: italic; margin-bottom: 24px; }
+    .back-link { display:inline-block; margin-top:20px; color:var(--accent); font-family:var(--font-body); font-size:13px; }
+  </style>
+</head>
+<body>
+<header class="masthead" style="margin-bottom:0">
+  <div class="masthead__logo-wrap" style="padding:10px 0 6px">
+    <a href="index.html"><span class="masthead__logo">NewsBuzz</span></a>
+  </div>
+</header>
+
+<div class="privacy-wrap">
+  <h1>Privacy Policy</h1>
+  <p class="date">Last updated: January 2024</p>
+
+  <p>This Privacy Policy describes how NewsBuzz ("we", "us", or "our") collects, uses, and shares information about you when you visit newsbuzz.in.</p>
+
+  <h2>1. Information We Collect</h2>
+  <p>We do not require you to create an account or log in to read our content. We may collect:</p>
+  <ul>
+    <li>Usage data (pages visited, time on site, browser type) via analytics tools</li>
+    <li>IP address and general location data for analytics purposes</li>
+    <li>Cookies placed by our advertising partner (Mediavine) for personalised ads</li>
+  </ul>
+
+  <h2>2. How We Use Information</h2>
+  <p>We use collected data to:</p>
+  <ul>
+    <li>Understand how readers use our site and improve content</li>
+    <li>Serve relevant display advertisements through Mediavine</li>
+    <li>Ensure the security and stability of the website</li>
+  </ul>
+
+  <h2>3. Advertising &amp; Cookies</h2>
+  <p>NewsBuzz uses Mediavine to serve advertisements. Mediavine and its advertising partners may use cookies, web beacons, and similar tracking technologies to collect information about your visits to our site and other websites in order to provide relevant advertisements.</p>
+  <p>You can opt out of personalised advertising by visiting <a href="https://optout.aboutads.info" target="_blank" rel="noopener">aboutads.info</a> or adjusting your browser's cookie settings.</p>
+
+  <h2>4. Third-Party Services</h2>
+  <p>Our site uses the following third-party services:</p>
+  <ul>
+    <li><strong>Google Firebase</strong> — for article database storage</li>
+    <li><strong>Mediavine</strong> — for display advertising</li>
+    <li><strong>Unsplash</strong> — for article imagery</li>
+    <li><strong>Google Fonts</strong> — for typography</li>
+  </ul>
+  <p>Each of these services has their own privacy policy. We encourage you to review them.</p>
+
+  <h2>5. Data Retention</h2>
+  <p>We do not store personally identifiable information about our readers. Analytics data is retained in aggregated, anonymised form for up to 26 months.</p>
+
+  <h2>6. Children's Privacy</h2>
+  <p>Our site is not directed at children under the age of 13. We do not knowingly collect personal information from children.</p>
+
+  <h2>7. Your Rights</h2>
+  <p>If you are located in the European Economic Area or the UK, you have certain rights regarding your personal data under GDPR. For any data-related requests, contact us at <strong>privacy@newsbuzz.in</strong>.</p>
+
+  <h2>8. Changes to This Policy</h2>
+  <p>We may update this Privacy Policy from time to time. We will notify readers of significant changes by posting a notice on the homepage.</p>
+
+  <h2>9. Contact</h2>
+  <p>For privacy-related questions: <strong>privacy@newsbuzz.in</strong></p>
+
+  <a href="index.html" class="back-link">← Back to NewsBuzz</a>
+</div>
+
+<footer style="background:var(--ink);color:var(--paper);padding:20px;text-align:center;font-size:11px;font-family:var(--font-body);">
+  &copy; 2026 NewsBuzz &middot; West Bengal, India
+  <div style="font-size:11px;color:#888;margin-top:6px;">Unique Visitors: <span id="visitor-count-val" style="color:var(--accent);font-weight:bold;">...</span></div>
+</footer>
+
+<script type="module">
+  import { initFirebase, setupVisitorCounter } from './js/firebase.js';
+  initFirebase();
+  setupVisitorCounter((count) => {
+    const el = document.getElementById('visitor-count-val');
+    if (el) el.textContent = Number(count).toLocaleString('en-IN');
+  });
+</script>
+</body>
+</html>

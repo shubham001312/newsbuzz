@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us — NewsBuzz</title>
+  <meta name="description" content="About NewsBuzz — West Bengal and India's trusted digital news platform.">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="js/config.js"></script>
+  <style>
+    .about-wrap { max-width: 720px; margin: 40px auto; padding: 0 20px 60px; }
+    .about-wrap h1 { font-family: var(--font-head); font-size: 36px; margin-bottom: 8px; }
+    .about-wrap h2 { font-family: var(--font-head); font-size: 20px; margin: 28px 0 8px; color: var(--accent); }
+    .about-wrap p  { font-family: var(--font-body); font-size: 15px; line-height: 1.8; color: #444; margin-bottom: 14px; }
+    .about-rule    { border: none; border-top: 2px solid var(--rule-light); margin: 30px 0; }
+    .back-link     { display:inline-block; margin-top:20px; color:var(--accent); font-family:var(--font-body); font-size:13px; }
+  </style>
+</head>
+<body>
+<header class="masthead" style="margin-bottom:0">
+  <div class="masthead__logo-wrap" style="padding:10px 0 6px">
+    <a href="index.html"><span class="masthead__logo">NewsBuzz</span></a>
+  </div>
+</header>
+
+<div class="about-wrap">
+  <h1>About NewsBuzz</h1>
+  <p>NewsBuzz is a digital-first news platform dedicated to delivering fast, accurate, and trustworthy news from West Bengal and across India.</p>
+
+  <h2>Our Mission</h2>
+  <p>We believe every reader in West Bengal — from Kolkata to Cooch Behar, from Darjeeling to Diamond Harbour — deserves timely access to news that matters to them. NewsBuzz was founded to fill that gap with honest, no-frills journalism in both English and Bengali.</p>
+
+  <h2>What We Cover</h2>
+  <p>Our editorial team covers breaking news across eight key areas: West Bengal local news, national India news, government initiatives and schemes, politics, crime &amp; law, education, sports, and weather. We pride ourselves on being among the first to report on stories that affect everyday life in Bengal.</p>
+
+  <h2>Our Standards</h2>
+  <p>NewsBuzz is committed to factual, balanced reporting. We follow PTI/ANI editorial standards for wire-service reporting. We correct our errors promptly and transparently. We do not publish unverified rumours or sensationalised content.</p>
+
+  <h2>Languages</h2>
+  <p>All our articles are available in English. Select articles are also available in Bengali (বাংলা) to ensure maximum accessibility for our readers across West Bengal and the Bengali-speaking diaspora.</p>
+
+  <hr class="about-rule">
+
+  <h2>Contact Us</h2>
+  <p>For editorial queries, corrections, or partnership inquiries, please reach out to us at:<br>
+  <strong>contact@newsbuzz.in</strong></p>
+
+  <h2>Advertising</h2>
+  <p>NewsBuzz is monetised through display advertising via Mediavine. We do not accept paid editorial content or sponsored articles that are presented as news. All advertising is clearly labelled.</p>
+
+  <a href="index.html" class="back-link">← Back to NewsBuzz</a>
+</div>
+
+<footer style="background:var(--ink);color:var(--paper);padding:20px;text-align:center;font-size:11px;font-family:var(--font-body);">
+  &copy; 2026 NewsBuzz &middot; West Bengal, India
+  <div style="font-size:11px;color:#888;margin-top:6px;">Unique Visitors: <span id="visitor-count-val" style="color:var(--accent);font-weight:bold;">...</span></div>
+</footer>
+
+<script type="module">
+  import { initFirebase, setupVisitorCounter } from './js/firebase.js';
+  initFirebase();
+  setupVisitorCounter((count) => {
+    const el = document.getElementById('visitor-count-val');
+    if (el) el.textContent = Number(count).toLocaleString('en-IN');
+  });
+</script>
+</body>
+</html>
