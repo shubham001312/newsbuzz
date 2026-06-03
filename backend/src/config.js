@@ -26,9 +26,9 @@ const config = {
   
   openrouter: {
     apiKey: process.env.OPENROUTER_API_KEY || '',
-    model: process.env.OPENROUTER_MODEL || 'google/gemini-2.5-flash-lite',
+    model: process.env.OPENROUTER_MODEL || 'nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free',
     url: 'https://openrouter.ai/api/v1/chat/completions',
-    siteUrl: process.env.SITE_URL || 'https://newsbuzz-independent.netlify.app',
+    siteUrl: process.env.SITE_URL || 'https://newsbuzz-independent-one.netlify.app',
     appName: 'NewsBuzz AutoPilot'
   },
 

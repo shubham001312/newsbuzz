@@ -23,9 +23,9 @@
   window.CONFIG = {
     // OpenRouter AI
     OPENROUTER_API_KEY: env('OPENROUTER_API_KEY', 'sk-or-v1-your-key-here'),
-    OPENROUTER_MODEL: env('OPENROUTER_MODEL', 'google/gemini-2.5-flash-lite'),
+    OPENROUTER_MODEL: env('OPENROUTER_MODEL', 'nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free'),
     OPENROUTER_URL: 'https://openrouter.ai/api/v1/chat/completions',
-    OPENROUTER_SITE_URL: env('SITE_URL', 'https://newsbuzz-independent.netlify.app'),
+    OPENROUTER_SITE_URL: env('SITE_URL', 'https://newsbuzz-independent-one.netlify.app'),
     OPENROUTER_APP_NAME: 'NewsBuzz',
 
     // Firebase
@@ -47,7 +47,7 @@
     SITE_NAME: env('SITE_NAME', 'NewsBuzz'),
     SITE_TAGLINE: env('SITE_TAGLINE', 'Truth - Speed - Integrity'),
     SITE_TAGLINE_BN: env('SITE_TAGLINE_BN', '\u09b8\u09a4\u09cd\u09af \u00b7 \u0997\u09a4\u09bf \u00b7 \u09b8\u09a4\u09a4\u09be'),
-    SITE_URL: env('SITE_URL', 'https://newsbuzz-independent.netlify.app'),
+    SITE_URL: env('SITE_URL', 'https://newsbuzz-independent-one.netlify.app'),
 
     // Auto-Publish
     AUTO_SCAN_INTERVAL: parseInt(env('AUTO_SCAN_INTERVAL', '7200000'), 10),
